@@ -10,6 +10,7 @@ public class PathFinder : MonoBehaviour
     [SerializeField] Waypoint startWaypoint, endWaypoint;
     [SerializeField] bool isRunning = true;
     Waypoint searchCenter;
+    bool gotPath = false;
 
     List<Waypoint> path = new List<Waypoint>();
 
@@ -111,10 +112,14 @@ public class PathFinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
-        LoadBlocks();
-        MarkStartAndEnd();
-        BreadthFirstSearch();
-        CreatePath();
+        if (gotPath == false)
+        {
+            LoadBlocks();
+            MarkStartAndEnd();
+            BreadthFirstSearch();
+            CreatePath();
+            gotPath = true;
+        }
         return path;
     }
 }
