@@ -1343,90 +1343,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 583290162}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &595358364
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1493057990}
-    m_Modifications:
-    - target: {fileID: 7176582952043116061, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176582952043116050, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: movementPerSecond
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3590637756416681702, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7372496600163680137, guid: b8bb2ee1f624899499c3e490f30930e2,
-        type: 3}
-      propertyPath: hitPoints
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b8bb2ee1f624899499c3e490f30930e2, type: 3}
 --- !u!1001 &648885839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1646,15 +1562,9 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 779253160}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d8d21ab85e23141ae44c9d7ab92064, type: 3}
---- !u!4 &779253160 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7176582952043116051, guid: b8bb2ee1f624899499c3e490f30930e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 595358364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &800336247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3835,6 +3745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1493057990}
+  - component: {fileID: 1493057991}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -3852,11 +3763,25 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 779253160}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1493057991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493057989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9909194f761fb1042870cc5a2f748a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsBetweenSpawns: 3
+  numberOfSpawns: 10
+  enemy: {fileID: 7176582952043116061, guid: b8bb2ee1f624899499c3e490f30930e2, type: 3}
 --- !u!4 &1554632571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7546349850298558251, guid: 2612c9dd34ecde344b84f8bd4e6e8906,
@@ -4674,7 +4599,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 779253160}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d8d21ab85e23141ae44c9d7ab92064, type: 3}
 --- !u!1001 &1867903494
@@ -5220,7 +5145,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 779253160}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d8d21ab85e23141ae44c9d7ab92064, type: 3}
 --- !u!1001 &2102899109
@@ -5464,7 +5389,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 779253160}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d8d21ab85e23141ae44c9d7ab92064, type: 3}
 --- !u!1 &1133594588898041721
