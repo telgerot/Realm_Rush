@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 1520659183876437344}
-  targetEnemy: {fileID: 0}
   attackRange: 30
   projectileParticle: {fileID: 8168477367986638014}
 --- !u!1001 &1519091009852942017
@@ -119,11 +118,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1519091011472220546}
     m_Modifications:
-    - target: {fileID: 7226210159638318518, guid: 8238921bafd389b44921fe80cc7f1f9d,
-        type: 3}
-      propertyPath: prewarm
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1405215511811078, guid: 8238921bafd389b44921fe80cc7f1f9d, type: 3}
       propertyPath: m_Name
       value: Tower Top
@@ -171,6 +165,16 @@ PrefabInstance:
     - target: {fileID: 4101459293844584, guid: 8238921bafd389b44921fe80cc7f1f9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226210159638318518, guid: 8238921bafd389b44921fe80cc7f1f9d,
+        type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226210159638318518, guid: 8238921bafd389b44921fe80cc7f1f9d,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8238921bafd389b44921fe80cc7f1f9d, type: 3}

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    [SerializeField] Collider collisionMesh;
     [SerializeField] int hitPoints = 10;
+    [SerializeField] ParticleSystem hitParticlesPrefab;
+    [SerializeField] ParticleSystem deathParticlesPrefab;
 
     void Start()
     {
@@ -21,13 +22,14 @@ public class EnemyDamage : MonoBehaviour
     void ProcessHit()
     {
         hitPoints = hitPoints - 1;
+        Instantiate(hitParticlesPrefab, transform.position, Quaternion.identity);
     }
 
     private void ProcessDeath()
     {
         if (hitPoints <= 0)
         {
-            print("I'm dead!");
+            Instantiate(deathParticlesPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
