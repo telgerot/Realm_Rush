@@ -9,11 +9,8 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] ParticleSystem hitParticlesPrefab;
     [SerializeField] ParticleSystem deathParticlesPrefab;
     [SerializeField] ParticleSystem goalParticlesPrefab;
-
-    void Start()
-    {
-        
-    }
+    [SerializeField] AudioClip enemyDamageBaseSFX;
+    [SerializeField] AudioClip enemyTakesDamageSFX;
 
     private void OnParticleCollision(GameObject other)
     {
@@ -23,6 +20,7 @@ public class EnemyDamage : MonoBehaviour
 
     void ProcessHit()
     {
+        GetComponent<AudioSource>().PlayOneShot(enemyTakesDamageSFX);
         hitPoints = hitPoints - 1;
         Instantiate(hitParticlesPrefab, transform.position, Quaternion.identity);
     }
@@ -31,6 +29,7 @@ public class EnemyDamage : MonoBehaviour
     {
         if (hitPoints <= 0)
         {
+            FindObjectOfType<EnemySpawner>().PlayEnemyDeathSound();
             Instantiate(particleVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
@@ -38,8 +37,8 @@ public class EnemyDamage : MonoBehaviour
 
     public void DamageBase()
     {
-        //todo create "health" for base, and do damage to it
         hitPoints = 0;
+        GetComponent<AudioSource>().PlayOneShot(enemyDamageBaseSFX);
         ProcessDeath(goalParticlesPrefab);
         FindObjectOfType<PlayerHealth>().DamagePlayer(enemyDamage);
     } 
