@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] float movementPerSecond = 2f;
+    [SerializeField] float movementDelayInSeconds = 2f;
 
     private void Start()
     {
@@ -19,8 +19,9 @@ public class EnemyMover : MonoBehaviour
         foreach (Waypoint waypoint in path)
         {
             transform.position = waypoint.transform.position;
-            yield return new WaitForSeconds(movementPerSecond);
+            yield return new WaitForSeconds(movementDelayInSeconds);
         }
-        print("Ending patrol");
+        print("Hitting the base");
+        GetComponent<EnemyDamage>().DamageBase();
     }
 }
